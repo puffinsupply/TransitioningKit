@@ -9,8 +9,6 @@ class FirstViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let secondViewController = storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! UIViewController
-
     let pushAnimator                  = FirstViewToSecondViewPushAnimator()
     let interactionControllerDelegate = FirstViewInteractionControllerDelegate()
     let interactionController         = PSPanGestureInteractionController(viewController: self, delegate: interactionControllerDelegate)

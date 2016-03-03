@@ -5,7 +5,7 @@ class FirstViewToSecondViewPushAnimator: NSObject, UIViewControllerAnimatedTrans
 
   // MARK: Public
 
-  func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+  func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return 0.5
   }
 
@@ -18,7 +18,7 @@ class FirstViewToSecondViewPushAnimator: NSObject, UIViewControllerAnimatedTrans
 
     toViewButton.transform = CGAffineTransformMakeScale(0, 0)
 
-    context.containerView().insertSubview(toView, belowSubview: fromView)
+    context.containerView()!.insertSubview(toView, belowSubview: fromView)
 
     UIView.animateWithDuration(
       0.5,
@@ -33,7 +33,7 @@ class FirstViewToSecondViewPushAnimator: NSObject, UIViewControllerAnimatedTrans
           delay:                   0,
           usingSpringWithDamping:  0.5,
           initialSpringVelocity:   0,
-          options:                 nil,
+          options:                 [],
           animations:              { toViewButton.transform = CGAffineTransformIdentity },
           completion:              nil
         )

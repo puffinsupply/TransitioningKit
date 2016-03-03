@@ -5,20 +5,20 @@ class ThirdViewControllerPresentAnimator: NSObject, UIViewControllerAnimatedTran
 
   // MARK: Public
 
-  func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+  func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return 0.2
   }
 
   func animateTransition(context: UIViewControllerContextTransitioning) {
     let fromNavigationController = context.viewControllerForKey(UITransitionContextFromViewControllerKey) as! UINavigationController
 
-    let fromView = fromNavigationController.topViewController.view
+    let fromView = fromNavigationController.topViewController!.view
     let toView   = context.viewForKey(UITransitionContextToViewKey)!
 
     let fromViewButton = fromView.subviews.first as! UIButton
     let toViewButton   = toView.subviews.first as! UIButton
 
-    context.containerView().addSubview(toView)
+    context.containerView()!.addSubview(toView)
 
     toViewButton.transform = CGAffineTransformMakeScale(0, 0)
     toView.backgroundColor = UIColor.clearColor()
@@ -37,7 +37,7 @@ class ThirdViewControllerPresentAnimator: NSObject, UIViewControllerAnimatedTran
           delay:                   0,
           usingSpringWithDamping:  0.5,
           initialSpringVelocity:   0,
-          options:                 nil,
+          options:                 [],
           animations:              { toViewButton.transform = CGAffineTransformIdentity },
           completion:              nil
         )
