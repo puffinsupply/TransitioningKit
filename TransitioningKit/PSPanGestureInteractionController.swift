@@ -25,15 +25,15 @@ import UIKit
 
 
 @objc public protocol PSPanGestureInteractionControllerDelegate {
-  optional func handlePanGestureBeganLeft(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureBeganRight(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureBeganUp(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureBeganDown(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureBeganLeft(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureBeganRight(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureBeganUp(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureBeganDown(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
 
-  optional func handlePanGestureEndedLeft(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureEndedRight(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureEndedUp(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
-  optional func handlePanGestureEndedDown(#gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureEndedLeft(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureEndedRight(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureEndedUp(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
+  optional func handlePanGestureEndedDown(gestureRecognizer gestureRecognizer: UIPanGestureRecognizer, viewController: UIViewController, interactionController: UIPercentDrivenInteractiveTransition)
 }
 
 

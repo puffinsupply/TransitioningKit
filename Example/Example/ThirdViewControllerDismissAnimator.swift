@@ -5,7 +5,7 @@ class ThirdViewControllerDismissAnimator: NSObject, UIViewControllerAnimatedTran
 
   // MARK: Public
 
-  func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+  func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return 0.2
   }
 
@@ -13,7 +13,7 @@ class ThirdViewControllerDismissAnimator: NSObject, UIViewControllerAnimatedTran
     let toNavigationController = context.viewControllerForKey(UITransitionContextToViewControllerKey) as! UINavigationController
 
     let fromView = context.viewForKey(UITransitionContextFromViewKey)!
-    let toView   = toNavigationController.topViewController.view
+    let toView   = toNavigationController.topViewController!.view
 
     let fromViewButton = fromView.subviews.first as! UIButton
     let toViewButton   = toView.subviews.first as! UIButton
@@ -31,7 +31,7 @@ class ThirdViewControllerDismissAnimator: NSObject, UIViewControllerAnimatedTran
           delay:                   0,
           usingSpringWithDamping:  0.5,
           initialSpringVelocity:   0,
-          options:                 nil,
+          options:                 [],
           animations:              { toViewButton.transform = CGAffineTransformIdentity },
           completion:              nil
         )

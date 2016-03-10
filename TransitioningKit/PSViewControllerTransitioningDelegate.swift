@@ -67,7 +67,7 @@ public class PSViewControllerTransitioningDelegate: NSObject, UIViewControllerTr
 
   public func presentationControllerForPresentedViewController(
     presented:                           UIViewController,
-    presentingViewController presenting: UIViewController!,
+    presentingViewController presenting: UIViewController,
     sourceViewController source:         UIViewController
     ) -> UIPresentationController? {
       return presentationController
